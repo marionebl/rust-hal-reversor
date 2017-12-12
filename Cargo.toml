@@ -1,6 +1,9 @@
 [package]
+authors = ["Mario Nebl <hello@mario-nebl.de>"]
 name = "reversor"
 version = "0.1.0"
-authors = ["Mario Nebl <hello@mario-nebl.de>"]
 
 [dependencies]
+
+[dev-dependencies]
+assert_cli = "0.5.4"
