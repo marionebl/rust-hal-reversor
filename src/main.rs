@@ -4,14 +4,17 @@ use lib::reversor;
 use std::env;
 
 fn main() {
-    let args: Vec<String> = env::args().skip(1).collect();
+    let args = env::args().skip(1);
 
-    if args.len() != 1 {
-        eprintln!("requires 1 arguments, received {}", args.len());
-        std::process::exit(1)
-    }
-
-    for w in args.into_iter() {
-        println!("{}", reversor(&w));
+    match args.len() {
+        0 => {
+            eprintln!("requires 1 arguments, received 0");
+            std::process::exit(1)
+        },
+        _ => {
+            args.for_each(|w| {
+                print!("{} ", reversor(&w));
+            })
+        }
     }
 }
